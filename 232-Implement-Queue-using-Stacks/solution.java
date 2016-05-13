@@ -4,13 +4,14 @@ class MyQueue {
     Stack<Integer> stack2 = new Stack<Integer>();
     public void push(int x) {
         stack1.push(x);
-        while(!stack1.isEmpty()){
-            stack2.push(stack1.pop());
-        }
+        
     }
 
     // Removes the element from in front of queue.
     public void pop() {
+        while(!stack1.isEmpty()){
+            stack2.push(stack1.pop());
+        }
         if(!stack2.isEmpty()){
             stack2.pop();
         }
@@ -18,7 +19,7 @@ class MyQueue {
 
     // Get the front element.
     public int peek() {
-        return stack2.top();
+        return stack2.peek();
     }
 
     // Return whether the queue is empty.
