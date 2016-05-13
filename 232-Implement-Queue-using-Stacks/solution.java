@@ -4,21 +4,25 @@ class MyQueue {
     Stack<Integer> stack2 = new Stack<Integer>();
     public void push(int x) {
         stack1.push(x);
-        
     }
 
     // Removes the element from in front of queue.
     public void pop() {
-        while(!stack1.isEmpty()){
+        if(stack2.isEmpty()){
+            while(!stack1.isEmpty()){
             stack2.push(stack1.pop());
+            }
         }
-        if(!stack2.isEmpty()){
-            stack2.pop();
-        }
+        stack2.pop();
     }
 
     // Get the front element.
     public int peek() {
+        if(stack2.isEmpty()){
+            while(!stack1.isEmpty()){
+            stack2.push(stack1.pop());
+            }
+        }
         return stack2.peek();
     }
 
