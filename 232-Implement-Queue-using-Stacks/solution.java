@@ -11,14 +11,14 @@ class MyQueue {
 
     // Removes the element from in front of queue.
     public void pop() {
-        if(!stack2.isEmtpy()){
+        if(!stack2.isEmpty()){
             stack2.pop();
         }
     }
 
     // Get the front element.
     public int peek() {
-        return stack2.pop();
+        return stack2.top();
     }
 
     // Return whether the queue is empty.
