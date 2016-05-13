@@ -11,7 +11,9 @@ class MyQueue {
 
     // Removes the element from in front of queue.
     public void pop() {
-        stack2.pop();
+        if(!stack2.isEmtpy()){
+            stack2.pop();
+        }
     }
 
     // Get the front element.
