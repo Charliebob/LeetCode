@@ -9,7 +9,7 @@
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode fast = head;
-        while(n-->0) fast = fast.next;
+        while(n-- >0) fast = fast.next;
         if(fast==null) return head.next;
         ListNode slow = head;
         while(fast.next!=null){
