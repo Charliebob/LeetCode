@@ -15,7 +15,7 @@ public class Solution {
             result.add(root.val);
             if(root.right!=null) stack.push(root.right);
             root = root.left;
-            if(root.left==null && !stack.isEmpty()) stack.pop();
+            if(root.left==null && !stack.isEmpty()) root = stack.pop();
         }
         return result;
     }
