@@ -8,11 +8,15 @@
  * }
  */
 public class Solution {
-    List<Integer> result = new ArrayList<Integer>();
     public List<Integer> preorderTraversal(TreeNode root) {
-        if(root==null) return result;
-        result.add(root.val);
-        preorderTraversal(root.left);
-        return preorderTraversal(root.right);
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while(root!=null){
+            result.add(root.val);
+            if(root.right!=null) stack.push(root.right);
+            root = root.left;
+            if(root.left==null && !stack.isEmpty()) stack.pop();
+        }
+        return result;
     }
 }
