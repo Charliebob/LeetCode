@@ -1,13 +1,10 @@
 public class Solution {
     public int singleNumber(int[] nums) {
-        Set<Integer> intSet = new HashSet<>(nums.length);
-        Set<Integer> seenTwice = new HashSet<>(nums.length);
-        for(int n : nums) {
-            if(!intSet.add(n)) {
-                seenTwice.add(n);
-            }
+        int ones =0, twos = 0;
+        for(int i=0; i<nums.length; i++){
+            ones = (ones^nums[i]) &~twos;
+            twos = (twos^nums[i]) &~ones;
         }
-        intSet.removeAll(seenTwice);
-        return intSet.iterator().next();
+        return ones;
     }
 }
