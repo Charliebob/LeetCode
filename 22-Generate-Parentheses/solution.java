@@ -1,15 +1,15 @@
 public class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String>list = new ArrayList<String>();
-        backTrack(list, "",0,0,n);
-        return list;
+        List<String> result= new LinkedList<String>();
+        backTrack(result, "", 0,0,n);
+        return result;
     }
-    public void backTrack(List<String>list, String str, int l, int r, int max);{
+    private void backTrack(List<String> result, String str, int left, int right, int max){
         if(str.length()==max*2){
-            list.add(str);
+            result.add(str);
             return;
         }
-        if(l<max) backTrack(list, str+"(", l+1, r, max);
-        if(r<l) backTrack(list, str+")", l, r+1, max);
+        if(left<max) backTrack(result, str+"(", left+1, right, max);
+        if(right<left) backTrack(result, str+")", left, right+1, max);
     }
 }
