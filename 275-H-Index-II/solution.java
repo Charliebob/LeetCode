@@ -1,6 +1,6 @@
 public class Solution {
     public int hIndex(int[] citations) {
-        int len = citation.length;
+        int len = citations.length;
         int lo = 0, hi = len-1;
         while(lo<=hi){
             int mid = (hi+lo)/2;
