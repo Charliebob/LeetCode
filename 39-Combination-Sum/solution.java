@@ -9,7 +9,7 @@ public class Solution {
         if(target>0){
             for(int i=start; i<candidates.length && target>=candidates[i];i++){
                 cur.add(candidates[i]);
-                get(result, cur, candidates, target-candidates[i], i);
+                getResult(result, cur, candidates, target-candidates[i], i);
                 cur.remove(cur.size()-1);
             }
         }else if(target==0){
