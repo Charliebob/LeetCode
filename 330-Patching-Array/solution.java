@@ -1,13 +1,15 @@
 public class Solution {
     public int minPatches(int[] nums, int n) {
-        int count=0, i=0;
-        long priorSum = 0;
-        while(priorSum<n){
-            if(i>=nums.length||nums[i]>priorSum+1){
+        int count = 0;
+        int index = 0;
+        long sum = 0;
+        while(sum<n){
+            if(index>=nums.length || nums[index]>sum+1){
                 ++count;
-                priorSum = (priorSum<<1)+1;
+                sum = (sum<<1)+1;
+            }else{
+                sum+=nums[index++];
             }
-            else priorSum+=nums[i++];
         }
         return count;
     }
