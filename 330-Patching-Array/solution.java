@@ -6,7 +6,7 @@ public class Solution {
         while(sum<n){
             if(index>=nums.length || nums[index]>sum+1){
                 ++count;
-                sum = (sum<<1)+1;
+                sum += sum+1;
             }else{
                 sum+=nums[index++];
             }
