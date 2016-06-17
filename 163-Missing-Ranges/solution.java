@@ -4,9 +4,9 @@ public class Solution {
         if(nums==null) return result;
         if(nums.length==0){
             if(lower==upper){
-                result.add(Integer.toString(lower));
+                return Integer.toString(lower);
             }else{
-                result.add(lower+"->"+upper);
+                return lower+"->"+upper;
             }
         }
         if(lower+2<nums[0]) result.add(lower+"->"+(nums[0]-1));
