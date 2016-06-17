@@ -9,16 +9,15 @@
 public class Solution {
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(0);
-        ListNode cur = head;
-        while(cur!=null){
+        while(head!=null){
             ListNode pre = dummy;
-            while(pre.next!=null && pre.next.val<cur.val){
+            while(pre.next!=null && pre.next.val<head.val){
                 pre = pre.next;
             }
-            ListNode temp = cur.next;
-            cur.next = pre.next;
-            pre.next = cur;
-            cur = temp;
+            ListNode temp = head.next;
+            head.next = pre.next;
+            pre.next = head;
+            head = temp;
         }
         return dummy.next;
     }
