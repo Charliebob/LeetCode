@@ -4,13 +4,15 @@ public class Solution {
         if(nums==null) return result;
         if(nums.length==0){
             if(lower==upper){
-                return Integer.toString(lower);
+                result.add(Integer.toString(lower));
             }else{
-                return lower+"->"+upper;
+                result.add(lower+"->"+upper);
             }
+            return result;
         }
-        if(lower+2<nums[0]) result.add(lower+"->"+(nums[0]-1));
+        if(lower+2<=nums[0]) result.add(lower+"->"+(nums[0]-1));
         else if(lower+2==nums[0]) result.add(Integer.toString(lower+1));
+        else if(lower+1==nums[0]) result.add(Integer.toString(lower));
         for(int i=1; i<nums.length; i++){
             if(nums[i-1]+1==nums[i]||nums[i-1]==nums[i]) continue;
             else if(nums[i-1]+2==nums[i]){
@@ -19,10 +21,10 @@ public class Solution {
                 result.add(nums[i-1]+1 +"->"+(nums[i]-1));
             }
         }
-        if(nums[nums.length-1]+2<upper){
+        if(nums[nums.length-1]+2<=upper){
             result.add(nums[nums.length-1]+1 + "->" + upper);
-        }else if(nums[nums.length-1]+2==upper){
-            result.add(Integer.toString(upper-1));
+        }else if(nums[nums.length-1]+1==upper){
+            result.add(Integer.toString(upper));
         }
         return result;
     }
