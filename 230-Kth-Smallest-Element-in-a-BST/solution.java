@@ -9,14 +9,15 @@
  */
 public class Solution {
     public int kthSmallest(TreeNode root, int k) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        inOrderTraversal(root, result, k);
-        return result.get(k-1);
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        inorderTraversal(root, res, k);
+        return res.get(k-1);
     }
-    private void inOrderTraversal(TreeNode root, ArrayList<Integer>result, int k){
-        if(result.size()>=k) return;
-        if(root.left!=null) inOrderTraversal(root.left, result, k);
-        result.add(root.val);
-        if(root.right!=null) inOrderTraversal(root.right, result, k);
+    private void inorderTraversal(TreeNode root, ArrayList<Integer>res, int k){
+        if(res.size()>=k) return;
+        if(root.left!=null) inorderTraversal(root.left, res, k);
+        res.add(root.val);
+        if(root.right!=null)inorderTraversal(root.right, res, k);
     }
+    
 }
