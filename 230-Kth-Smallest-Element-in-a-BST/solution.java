@@ -15,8 +15,8 @@ public class Solution {
     }
     private void inOrderTraversal(TreeNode root, ArrayList<Integer>result, int k){
         if(result.size()>=k) return;
-        if(root.left!=null) inOrderTraversal(root.left, result, k+1);
+        if(root.left!=null) inOrderTraversal(root.left, result, k);
         result.add(root.val);
-        if(root.right!=null) inOrderTraversal(root.right, result, k+1);
+        if(root.right!=null) inOrderTraversal(root.right, result, k);
     }
 }
