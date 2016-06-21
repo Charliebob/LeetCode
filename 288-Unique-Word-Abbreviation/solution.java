@@ -21,7 +21,7 @@ public class ValidWordAbbr {
     return !map.containsKey(a) || (map.get(a).contains(word) && map.get(a).size() == 1);
   }
 
-  String abbr(String s) {
+  private String abbr(String s) {
     if (s.length() < 3) return s;
     return s.substring(0, 1) + String.valueOf(s.length() - 2) + s.substring(s.length() - 1);
   }
