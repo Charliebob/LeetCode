@@ -23,7 +23,7 @@ public class ValidWordAbbr {
 
   private String abbr(String s) {
     if (s.length() < 3) return s;
-    return s.substring(0, 1) + String.valueOf(s.length() - 2) + s.substring(s.length() - 1);
+    return s.charAt(0)+(s.length()-2)+s.charAt(s.length()-1);
   }
 }
 
