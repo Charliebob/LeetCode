@@ -8,19 +8,13 @@
  * }
  */
 public class Solution {
-    private int max = 0;
     public int longestConsecutive(TreeNode root) {
-        if(root == null) return 0;
-        helper(root, 0, root.val);
-        return max;
+        return dfs(root, null, 0);
     }
 
-    public void helper(TreeNode root, int cur, int target){
-        if(root == null) return;
-        if(root.val == target) cur++;
-        else cur = 1;
-        max = Math.max(cur, max);
-        helper(root.left, cur, root.val + 1);
-        helper(root.right, cur, root.val + 1);
+    private int dfs(TreeNode p, TreeNode parent, int length) {
+        if (p == null) return length;
+        length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;
+        return Math.max(length, Math.max(dfs(p.left, p, length),dfs(p.right, p, length)));
     }
 }
