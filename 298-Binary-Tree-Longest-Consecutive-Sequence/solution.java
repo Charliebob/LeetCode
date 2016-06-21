@@ -14,10 +14,10 @@ public class Solution {
         return maxLength;
     }
     private void DFS(TreeNode cur, TreeNode parent, int length){
-        if(root==null) return;
-        length = (parent!=null && cur.val+1=parent)? length+1: 1;
+        if(cur==null) return;
+        length = (parent!=null && cur.val==parent.val+1)? length+1: 1;
         maxLength = Math.max(length, maxLength);
-        DFS(parent.left, parent, length);
-        DFS(parent.right, parent, length);
+        DFS(cur.left, cur, length);
+        DFS(cur.right, cur, length);
     }
 }
