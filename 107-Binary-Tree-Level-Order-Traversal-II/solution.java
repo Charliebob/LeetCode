@@ -16,8 +16,7 @@ public class Solution {
         while(!queue.isEmpty()){
             int level = queue.size();
             List<Integer> eachLevel = new ArrayList<Integer>();
-            for(int i=0; i<level; i++){
-                
+            while(size-->0)
                 if(queue.peek().left!=null){
                     queue.add(queue.peek().left);
                 }
