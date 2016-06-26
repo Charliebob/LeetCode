@@ -1,17 +1,22 @@
 public class Solution {
     public boolean wordBreak(String s, Set<String> wordDict) {
-        if(s==null || s.length()==0) return false;
         int n = s.length();
-        boolean[] dp = new boolean[n];
-        for(int i=0; i<n; i++){
-            for(int j=0; j<=i; j++){
-                String sub = s.substring(j, i+1);
-                if(wordDict.contains(sub) && (j==0 || dp[j-1])){
-                    dp[i] = true;
+        boolean[] canWordBreak = new boolean[n + 1];
+        int minLength = Integer.MAX_VALUE;
+        int maxLength = Integer.MIN_VALUE;
+        for(String str : wordDict) {
+            minLength = Math.min(minLength, str.length());
+            maxLength = Math.max(maxLength, str.length());
+        }
+        canWordBreak[0] = true;
+        for(int i = minLength; i <= n; i++) {
+            for(int j = i - minLength; j >= 0 && j >= i - maxLength; j--) {
+                if(canWordBreak[j] && wordDict.contains(s.substring(j, i))) {
+                    canWordBreak[i] = true;
                     break;
                 }
             }
         }
-        return dp[n-1];
+        return canWordBreak[n];
     }
 }
