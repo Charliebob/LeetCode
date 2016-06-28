@@ -7,9 +7,8 @@
  * };
  */
 public class Solution {
+    public HashMap<Integer, UndirectedGraphNode> map = new HashMap();
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        public HashMap<Integer, UndirectedGraphNode> map = new HashMap();
-        public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) return null;
         if (map.containsKey(node.label)) 
             return map.get(node.label);
