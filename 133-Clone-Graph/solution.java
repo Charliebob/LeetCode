@@ -8,17 +8,16 @@
  */
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        HashMap<Integer, UndirectedGraphNode> map = new HashMap();
-        DFS(node, map);
-    }
-    private UndirectedGraphNode DFS(UndirectedGraphNode node,HashMap<Integer,UndirectedGraphNode> map){
-        if(node==null) return null;
-        if(map.containsKey(node.label)) return map.get(node.label);
-        UndirectedGraphNode Gnode = new UndirectedGraphNode(node.label);
-        map.put(Gnode.label, Gnode);
-        for(UndirectedGraphNode neighbor: Gnode.neighbors){
-            Gnode.neighbors.add(Gnode(neighbor));
+        public HashMap<Integer, UndirectedGraphNode> map = new HashMap();
+        public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) return null;
+        if (map.containsKey(node.label)) 
+            return map.get(node.label);
+        UndirectedGraphNode cloned = new UndirectedGraphNode(node.label);
+        map.put(cloned.label, cloned);
+        for(UndirectedGraphNode neighbor: node.neighbors){
+            cloned.neighbors.add(cloneGraph(neighbor));
         }
-        return Gnode;
+        return cloned;
     }
 }
