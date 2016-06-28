@@ -11,7 +11,7 @@ public class Solution {
         HashMap<Integer, UndirectedGraphNode> map = new HashMap();
         DFS(node, map);
     }
-    private UndirectedGraphNode DFS(HashMap<Integer,UndirectedGraphNode> map, UndirectedGraphNode node){
+    private UndirectedGraphNode DFS(UndirectedGraphNode node,HashMap<Integer,UndirectedGraphNode> map){
         if(node==null) return null;
         if(map.containsKey(node.label)) return map.get(node.label);
         UndirectedGraphNode Gnode = new UndirectedGraphNode(node.label);
