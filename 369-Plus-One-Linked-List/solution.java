@@ -9,8 +9,7 @@
 public class Solution {
     public ListNode plusOne(ListNode head) {
         if(head==null) return head;
-        ListNode dummy = head;
-        ListNode last = reverse(dummy);
+        ListNode last = reverse(head);
         ListNode dummyLast = last;
         while(last!=null){
             if(last.val<9) {
