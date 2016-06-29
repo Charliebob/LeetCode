@@ -63,7 +63,7 @@ public class LRUCache {
             if(count>capacity){
                 DLinkedNode tail = this.popTail();
                 this.cache.remove(tail.key);
-                --count;
+                count--;
             }
         }else{
             node.value = value;
