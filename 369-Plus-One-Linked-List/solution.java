@@ -31,14 +31,14 @@ public class Solution {
         return reverseBack;
     }
     private ListNode reverse(ListNode node){
-        ListNode d = null;
+        ListNode dummy = null;
         while(node!=null){
             ListNode temp = node.next;
-            node.next = d;
-            d = node;
+            node.next = dummy;
+            dummy = node;
             node = temp;
         }
-        return d;
+        return dummy;
     }
     
 }
