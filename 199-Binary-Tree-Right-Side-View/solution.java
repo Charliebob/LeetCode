@@ -17,9 +17,9 @@ public class Solution {
             int cnt = q.size();
             for(int i = 0;i < cnt;i++){
                 TreeNode cur = q.poll();
-             
-                ret.add(cur.val);
-                
+                if(i == cnt-1){
+                    ret.add(cur.val);
+                }
                 if(cur.left != null){
                     q.offer(cur.left);
                 } 
