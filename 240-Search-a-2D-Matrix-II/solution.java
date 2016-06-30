@@ -12,3 +12,5 @@ public class Solution {
         return false;
     }
 }
+
+//start from top right
