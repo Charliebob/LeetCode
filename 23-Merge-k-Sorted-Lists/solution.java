@@ -20,11 +20,11 @@ public class Solution {
         for(ListNode node: lists){
             if(node!=null)
                 queue.add(node);
-        }
+        } //k size, only head been added to the queue
         while(!queue.isEmpty()){
             tail.next = queue.poll();
             tail = tail.next;
-            if(tail.next==null)
+            if(tail.next!=null)
                 queue.add(tail.next);
         }
         return dummy.next;
