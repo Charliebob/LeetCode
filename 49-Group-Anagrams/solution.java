@@ -2,7 +2,7 @@ public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> result = new ArrayList<List<String>>();
         Map<String, Integer> map = new HashMap<String, Integer>(); //for each anagram word saves the index
-        Arrays.sort(strs);
+        //Arrays.sort(strs);
         for(String str: strs){
             char[] c = str.toCharArray();
             Arrays.sort(c);
