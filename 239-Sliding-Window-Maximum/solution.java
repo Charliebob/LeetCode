@@ -6,7 +6,7 @@ public class Solution {
     Queue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>(){
         @Override
         public int compare(Integer i1, Integer i2){
-            return Integer.compare(i2, i1);
+            return Integer.compare(i2, i1); //reverse order: max heap!
         }
     });
 
