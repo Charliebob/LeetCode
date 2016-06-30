@@ -12,7 +12,7 @@ public class Solution {
         PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>(){
             @Override
             public int compare(ListNode o1, ListNode o2){
-                return o2-o1;
+                return o1.val-o2.val;
             }
         });
         ListNode dummy = new ListNode(0);
