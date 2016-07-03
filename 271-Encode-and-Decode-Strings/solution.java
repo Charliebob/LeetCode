@@ -4,7 +4,7 @@ public class Codec {
     public String encode(List<String> strs) {
         StringBuilder sb = new StringBuilder();
         for(String s: strs){
-            sb.append(s.length()).append('/').append(s);
+            sb.append('/').append(s);
         }
         return sb.toString();
     }
