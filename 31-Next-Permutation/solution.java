@@ -18,7 +18,7 @@ public class Solution {
                 j--;
             }
             swap(nums,j,index-1);
-            reverseSort(nums,index,n-1);
+            reverseSort(nums,index,nums.length-1);
             return;
         }
     }
