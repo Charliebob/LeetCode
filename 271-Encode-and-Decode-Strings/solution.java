@@ -14,7 +14,7 @@ public class Codec {
         List<String> result = new LinkedList<String>();
         int index = 0;
         while(index<s.length()){
-            int slash = s.indexOf('/',index) //first occurence of '/'
+            int slash = s.indexOf('/',index); //first occurence of '/'
             int size = Integer.valueOf(s.substring(index,slash));
             result.add(s.substring(slash+1, slash+size+1));
             index=slash+size+1;
