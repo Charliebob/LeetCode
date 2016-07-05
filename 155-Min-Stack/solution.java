@@ -1,6 +1,6 @@
 class MinStack {
-    Deque<Integer> stack = new LinkedList<Integer>();
-    Deque<Integer> minStack = new LinkedList<Integer>();
+    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> minStack = new Stack<Integer>();
     public void push(int x){
         stack.push(x);
         if(minStack.isEmpty() || minStack.peek()>=x){
