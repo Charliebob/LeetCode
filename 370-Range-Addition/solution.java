@@ -5,9 +5,13 @@ public class Solution {
             int startIndex = updates[i][0]; //startIndex
             int endIndex = updates[i][1]; //endIndex
             int Inc = updates[i][2]; //Inc
-            for(int j=startIndex; j<=endIndex; j++){
-                result[j]+=Inc;
-            }
+            
+            result[startIndex] += Inc;
+            if(endIndex<length-1)
+            result[endIndex+1] -= Inc;
+        }
+        for(int i=1; i<length; i++){
+            result[i] += result[i-1];
         }
         return result;
     }
