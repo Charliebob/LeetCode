@@ -1,7 +1,7 @@
 public class Solution {
     public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         List<int[]> result = new LinkedList<int[]>();
-        for(nums1.length ==0 || nums2.length==0 || k==0) return result;
+        if(nums1.length ==0 || nums2.length==0 || k==0) return result;
         int[] index = new int[nums1.length];
         while(k-- >0){
             int min_val = Integer.MAX_VALUE;
