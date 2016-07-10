@@ -1,27 +1,16 @@
 public class Solution {
     public void wiggleSort(int[] nums) {
-        int median = findKthLargest(nums, (nums.length + 1) / 2);
-        int n = nums.length;
-
-        int left = 0, i = 0, right = n - 1;
-
-        while (i <= right) {
-
-            if (nums[newIndex(i,n)] > median) {
-                swap(nums, newIndex(left++,n), newIndex(i++,n));
-            }
-            else if (nums[newIndex(i,n)] < median) {
-                swap(nums, newIndex(right--,n), newIndex(i,n));
-            }
-            else {
-                i++;
-            }
+        Arrays.sort(nums);
+        int[] temp = new int[nums.length];
+        int mid = nums.length%2==0?nums.length/2-1:nums.length/2;
+        int index = 0;
+        for(int i=0;i<=mid;i++){
+        	temp[index] = nums[mid-i];
+        	if(index+1<nums.length)
+        		temp[index+1] = nums[nums.length-i-1];
+        	index = index+2;
         }
-
-
-    }
-
-    private int newIndex(int index, int n) {
-        return (1 + 2*index) % (n | 1);
-    }
+        for(int i=0;i<nums.length;i++){
+    		nums[i] = temp[i];
+    	}
 }
