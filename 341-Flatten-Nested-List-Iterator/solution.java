@@ -50,18 +50,3 @@ public class NestedIterator implements Iterator<Integer> {
  * while (i.hasNext()) v[f()] = i.next();
  */
 
-
-    @Override
-    public boolean hasNext() {
-        while(!stack.isEmpty()) {
-            NestedInteger curr = stack.peek();
-            if(curr.isInteger()) {
-                return true;
-            }
-            stack.pop();
-            for(int i = curr.getList().size() - 1; i >= 0; i--) {
-                stack.push(curr.getList().get(i));
-            }
-        }
-        return false;
-    }
