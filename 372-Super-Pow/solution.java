@@ -23,4 +23,6 @@ public class Solution {
                 .mod(BigInteger.valueOf(list.size())).intValue();
         if (key == 0) key = list.size();
         return list.get(key - 1);
+        
+    }
 }
