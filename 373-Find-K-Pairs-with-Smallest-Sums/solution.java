@@ -19,9 +19,9 @@ public class Solution {
                 break;
             }
             int[] temp = {nums1[in], nums2[index[in]]};
-            ret.add(temp);
+            result.add(temp);
             index[in]++;
         }
-        return ret;
+        return result;
     }
 }
