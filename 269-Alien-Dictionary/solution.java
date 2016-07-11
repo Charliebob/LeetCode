@@ -1,7 +1,7 @@
 public class Solution {
     public String alienOrder(String[] words) {
         Map<Character, Set<Character>> map = new HashMap<Character, Set<Character>>();
-        Map<Character, Integer> degeree = new HashMap<Character, Integer>();
+        Map<Character, Integer> degree = new HashMap<Character, Integer>();
         String result = "";
         if(words==null || words.length==0) return result;
         for(String s: words){
