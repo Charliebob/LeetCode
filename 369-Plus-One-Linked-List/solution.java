@@ -8,36 +8,25 @@
  */
 public class Solution {
     public ListNode plusOne(ListNode head) {
-        if(head==null) return head;
-        ListNode last = reverse(head);
-        ListNode dummyLast = last;
-        while(last!=null){
-            if(last.val<9) {
-                last.val++; 
-                break;
-            }
-            else{
-                last.val=0;
-                last = last.next;
-            }
+        if( DFS(head) == 0){
+        return head;
+        }else{
+            ListNode newHead = new ListNode(1);
+            newHead.next = head;
+            return newHead;
         }
-        ListNode reverseBack = reverse(dummyLast);
-        if(reverseBack.val==0){
-            ListNode node = new ListNode(1);
-            node.next = reverseBack;
-            return node;
-        }
-        return reverseBack;
     }
-    private ListNode reverse(ListNode node){
-        ListNode dummy = null;
-        while(node!=null){
-            ListNode temp = node.next;
-            node.next = dummy;
-            dummy = node;
-            node = temp;
-        }
-        return dummy;
+    
+    public int DFS(ListNode head){
+        if(head == null) return 1;
+        
+        int carry = DFS(head.next);
+        
+        if(carry == 0) return 0;
+        
+        int val = head.val + 1;
+        head.val = val%10;
+        return val/10;
     }
     
 }
