@@ -1,43 +1,69 @@
 public class Solution {
     public int maximalRectangle(char[][] matrix) {
-        if(matrix == null || matrix.length == 0 || matrix[0].length == 0) return 0;
-    
-        int[] height = new int[matrix[0].length];
-        for(int i = 0; i < matrix[0].length; i ++){
-            if(matrix[0][i] == '1') height[i] = 1;
-        }
-        int result = largestInLine(height);
-        for(int i = 1; i < matrix.length; i ++){
-            resetHeight(matrix, height, i);
-            result = Math.max(result, largestInLine(height));
-        }
-        
-        return result;
-    }
-    
-    private void resetHeight(char[][] matrix, int[] height, int idx){
-        for(int i = 0; i < matrix[0].length; i ++){
-            if(matrix[idx][i] == '1') height[i] += 1;
-            else height[i] = 0;
-        }
-    }    
-    
-    public int largestInLine(int[] height) {
-        if(height == null || height.length == 0) return 0;
-        int len = height.length;
-        Stack<Integer> s = new Stack<Integer>();
+        if(matrix==null || matrix.length==0 || matrix[0].length==0) return 0;
+        int temp[] = new int[matrix[0].length];
         int maxArea = 0;
-        for(int i = 0; i <= len; i++){
-            int h = (i == len ? 0 : height[i]);
-            if(s.isEmpty() || h >= height[s.peek()]){
-                s.push(i);
-            }else{
-                int tp = s.pop();
-                maxArea = Math.max(maxArea, height[tp] * (s.isEmpty() ? i : i - 1 - s.peek()));
-                i--;
+        int area = 0;
+        for(int i=0; i < matrix.length; i++){
+            for(int j=0; j < temp.length; j++){
+                if(matrix[i][j] == '0'){
+                    temp[j] = 0;
+                }else{
+                    temp[j] += 1;
+                }
+            }
+            area = maxHistogram(temp);
+            if(area > maxArea){
+                maxArea = area;
             }
         }
         return maxArea;
-    
+    }
+    public int maxHistogram(int input[]){
+        Deque<Integer> stack = new LinkedList<Integer>();
+        int maxArea = 0;
+        int area = 0;
+        int i;
+        for(i=0; i < input.length;){
+            if(stack.isEmpty() || input[stack.peekFirst()] <= input[i]){
+                stack.offerFirst(i++);
+            }else{
+                int top = stack.pollFirst();
+                //if stack is empty means everything till i has to be
+                //greater or equal to input[top] so get area by
+                //input[top] * i;
+                if(stack.isEmpty()){
+                    area = input[top] * i;
+                }
+                //if stack is not empty then everythin from i-1 to input.peek() + 1
+                //has to be greater or equal to input[top]
+                //so area = input[top]*(i - stack.peek() - 1);
+                else{
+                    area = input[top] * (i - stack.peekFirst() - 1);
+                }
+                if(area > maxArea){
+                    maxArea = area;
+                }
+            }
+        }
+        while(!stack.isEmpty()){
+            int top = stack.pollFirst();
+            //if stack is empty means everything till i has to be
+            //greater or equal to input[top] so get area by
+            //input[top] * i;
+            if(stack.isEmpty()){
+                area = input[top] * i;
+            }
+            //if stack is not empty then everything from i-1 to input.peek() + 1
+            //has to be greater or equal to input[top]
+            //so area = input[top]*(i - stack.peek() - 1);
+            else{
+                area = input[top] * (i - stack.peekFirst() - 1);
+            }
+        if(area > maxArea){
+                maxArea = area;
+            }
+        }
+        return maxArea;
     }
 }
