@@ -1,7 +1,7 @@
 public class MovingAverage {
 
     private int size;
-    private double sum;
+    private int sum;
     private Queue<Integer> queue;
     public MovingAverage(int size) {
         this.size = size;
@@ -15,7 +15,7 @@ public class MovingAverage {
         }
         queue.offer(val);
         sum += val;
-        return sum / queue.size();
+        return (double)sum / queue.size();
     }
     
 }
