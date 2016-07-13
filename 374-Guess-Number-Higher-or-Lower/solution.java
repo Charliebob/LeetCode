@@ -7,7 +7,7 @@ public class Solution extends GuessGame {
     public int guessNumber(int n) {
         int left = 1;
         int right = n;
-        int mid = left+(right-left)/2;
+        int mid = left+(right-left)/2;  //if mid = (left+right)/2 will TLE since left+right could overflow
         int guessNum = guess(mid);
         while(guessNum!=0){
             if(guessNum==1){
