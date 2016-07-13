@@ -10,7 +10,7 @@ public class Solution {
             i++;
             j--;
         }
-        return String.valueOf(word);
+        return new String(word);
         
     }
 }
