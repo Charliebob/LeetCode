@@ -2,16 +2,16 @@ public class MovingAverage {
 
     private int size;
     private double sum;
-    private ArrayDeque<Integer> queue;
+    private Queue<Integer> queue;
     public MovingAverage(int size) {
         this.size = size;
         this.sum = 0;
-        this.queue = new ArrayDeque<Integer>();
+        this.queue = new LinkedList<Integer>();
     }
 
     public double next(int val) {
         if (queue.size() == size) {
-            sum -= queue.remove();
+            sum -= queue.poll();
         }
         queue.offer(val);
         sum += val;
