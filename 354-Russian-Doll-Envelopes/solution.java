@@ -1,6 +1,6 @@
 public class Solution {
     public int maxEnvelopes(int[][] envelopes) {
-        if(envelops==null || envelops.length==0 || envelops[0].length==0) return 0;
+        if(envelopes==null || envelopes.length==0 || envelopes[0].length==0) return 0;
         Arrays.sort(envelopes, new Comparator<int[]>(){
             @Override
             public int compare(int[] e1, int[] e2){
