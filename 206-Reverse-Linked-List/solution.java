@@ -11,22 +11,16 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        //Define a new null node
-        ListNode newHead = null;
-        //loop until head reach null, the end of the list
-        while(head!=null){
-            //save the next node as the head.next
-            ListNode next = head.next;
-            //the next node of head point to newHead which is previous node
-            head.next = newHead;
-            //new head move to next one, which is head
-            newHead = head;
-            //head move to next node which is node
-            head = next;
-        }
-        /**
-         * @return return newHead which is the head of the reversed list head
-        */
-        return newHead;
+        public ListNode reverseList(ListNode head) {
+        /* recursive solution */
+        return reverseListInt(head, null);
+    }
+    
+    private ListNode reverseListInt(ListNode head, ListNode newHead) {
+        if (head == null)
+            return newHead;
+        ListNode next = head.next;
+        head.next = newHead;
+        return reverseListInt(next, head);
     }
 }
