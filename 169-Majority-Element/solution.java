@@ -7,7 +7,7 @@ public class Solution {
                 hm.put(nums[i], hm.get(nums[i])+1);
             }else{
                 hm.put(nums[i], 1);
-            }if(times>nums.length/2){
+            }if(hm.get(nums[i])>nums.length/2){
                 return nums[i];
             }
         }
