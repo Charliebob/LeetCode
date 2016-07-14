@@ -11,7 +11,6 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        public ListNode reverseList(ListNode head) {
         /* recursive solution */
         return reverseListInt(head, null);
     }
@@ -22,7 +21,5 @@ public class Solution {
         ListNode next = head.next;
         head.next = newHead;
         return reverseListInt(next, head);
-    }
-        
     }
 }
