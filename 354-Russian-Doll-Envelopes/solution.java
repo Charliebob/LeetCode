@@ -1,0 +1,24 @@
+public class Solution {
+    public int maxEnvelopes(int[][] envelopes) {
+        if(envelops==null || envelops.length==0 || envelops[0].length==0) return 0;
+        Arrays.sort(envelopes, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] e1, int[] e2){
+                return Integer.compare(e1[0], e2[0]); //compare by width
+            }
+        });
+        int n  = envelopes.length;
+        int[] dp = new int[n];
+        int ret = 0;
+        for (int i = 0; i < n; i++){
+            dp[i] = 1;
+            for (int j = 0; j < i; j++){
+                if (envelopes[i][0] > envelopes[j][0] && envelopes[i][1] > envelopes[j][1]){ //if width and length are greater
+                    dp[i] = Math.max(dp[i], 1 + dp[j]);                                      //than previous one
+                }
+            }
+            ret = Math.max(ret, dp[i]);
+        }
+        return ret;
+    }
+}
