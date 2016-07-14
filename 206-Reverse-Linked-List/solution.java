@@ -23,4 +23,6 @@ public class Solution {
         head.next = newHead;
         return reverseListInt(next, head);
     }
+        
+    }
 }
