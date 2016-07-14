@@ -1,56 +1,40 @@
 public class Solution {
+    int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+
     public List<Integer> numIslands2(int m, int n, int[][] positions) {
-        List<Integer> results = new ArrayList<Integer>();  
-        if(m <= 0 || n <= 0 || positions.length == 0)  
-            return results;  
-        //假设相邻的1都有相同的标识符，不相邻的1有不同的标识符，此为标识符到坐标列表的映射  
-        HashMap<Integer, List<Integer>> map1 = new HashMap<Integer, List<Integer>>();  
-        //用于快速查找某一位置的标识符  
-        HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();  
-        //标识符  
-        int count = 1;  
-        for(int i = 0; i < positions.length; i++) {  
-            int r = positions[i][0], c = positions[i][1];  
-            int p = r * n + c;  
-            //收集邻居的标识符，加入到set中  
-            Set<Integer> candidate = new HashSet<Integer>();  
-            int top = r - 1 >= 0 ? (r-1) * n + c : -1;  
-            int bot = r + 1 < m ? (r+1) * n + c : -1;  
-            int left = c - 1 >= 0 ? r * n + (c - 1) : -1;  
-            int right = c + 1 < n ? r * n + (c + 1) : -1;  
-            if(map2.containsKey(top))  
-                candidate.add(map2.get(top));  
-            if(map2.containsKey(bot))  
-                candidate.add(map2.get(bot));  
-            if(map2.containsKey(left))  
-                candidate.add(map2.get(left));  
-            if(map2.containsKey(right))  
-                candidate.add(map2.get(right));  
-            //如set为空，说明没有相邻的1，加入新的1  
-            if(candidate.isEmpty()) {  
-                List<Integer> l = new ArrayList<Integer>();  
-                l.add(p);  
-                map1.put(count, l);  
-                map2.put(p, count);  
-                count++;  
-            //否则，需要merge邻居，统一他们的标识符  
-            } else {  
-                Iterator iter = candidate.iterator();  
-                int cur = (Integer)iter.next();  
-                while(iter.hasNext()) {  
-                    int old = (Integer)iter.next();  
-                    for(int q : map1.get(old)) {  
-                        map2.put(q, cur);  
-                        map1.get(cur).add(q);  
-                    }  
-                    map1.remove(old);  
-                }  
-                map1.get(cur).add(p);  
-                map2.put(p, cur);  
-            }  
-            //每次的岛数，为map1的size  
-            results.add(map1.size());  
-        }  
-        return results;
+        List<Integer> result = new ArrayList<>();
+        if(m <= 0 || n <= 0) return result;
+    
+        int count = 0;                      // number of islands
+        int[] roots = new int[m * n];       // one island = one tree
+        Arrays.fill(roots, -1);            
+    
+        for(int[] p : positions) {
+            int root = n * p[0] + p[1];     // assume new point is isolated island
+            roots[root] = root;             // add new island
+            count++;
+    
+            for(int[] dir : dirs) {
+                int x = p[0] + dir[0]; 
+                int y = p[1] + dir[1];
+                int nb = n * x + y;
+                if(x < 0 || x >= m || y < 0 || y >= n || roots[nb] == -1) continue;
+                
+                int rootNb = findIsland(roots, nb);
+                if(root != rootNb) {        // if neighbor is in another island
+                    roots[root] = rootNb;   // union two islands 
+                    root = rootNb;          // current tree root = joined tree root
+                    count--;               
+                }
+            }
+    
+            result.add(count);
+        }
+        return result;
+    }
+    
+    public int findIsland(int[] roots, int id) {
+        while(id != roots[id]) id = roots[id];
+        return id;
     }
 }
