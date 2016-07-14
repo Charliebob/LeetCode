@@ -1,22 +1,30 @@
 public class Solution {
     public int countComponents(int n, int[][] edges) {
-        int[] roots = new int[n];
-        for(int i=0; i<n; i++) roots[i] = i; //n islands
-        for(int[] e: edges){ //for each pair
-            int root1 = find(roots, e[0]);
-            int root2 = find(roots, e[1]);
-            if(root1!=root2){
-                roots[root1] = root2;
-                n--;
-            }
+        int[] id = new int[n];
+        // 初始化
+        for (int i = 0; i < n; i++) {
+            id[i] = i;
         }
-        return n;
+        // union
+        for (int[] edge : edges) {              
+            int i = root(id, edge[0]);
+            int j = root(id, edge[1]);
+            id[i] = j;
+        }
+        // 统计根节点个数
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (id[i] == i)
+                count++;
+        }
+        return count;
     }
-    private int find(int[] roots, int id){
-        while(roots[id]!=id){
-            roots[id] = roots[roots[id]];
-            id = roots[id];
+    // 找根节点
+    public int root(int[] id, int i) {
+        while (i != id[i]) {
+            id[i] = id[id[i]];
+            i = id[i];
         }
-        return id;
+        return i;
     }
 }
