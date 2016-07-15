@@ -14,9 +14,9 @@ Special thanks to [@yukuairoy](https://leetcode.com/discuss/user/yukuairoy) for 
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
 
-<span class="hidebutton">[Two Sigma](/company/two-sigma/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.153928;">[Two Sigma](/company/two-sigma/)</span></div>
 
 <div>
 
