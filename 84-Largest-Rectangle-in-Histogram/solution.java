@@ -11,7 +11,7 @@ public class Solution {
                 int top = stack.pollFirst();
                 //if stack is empty means everything till i has to be
                 //greater or equal to heights[top] so get area by
-                / heights[top] * i;
+                // heights[top] * i;
                 if(stack.isEmpty()){
                     area = heights[top] * i;
                 }
