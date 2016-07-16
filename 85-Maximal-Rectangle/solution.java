@@ -1,7 +1,7 @@
 public class Solution {
     public int maximalRectangle(char[][] matrix) {
         if(matrix==null || matrix.length==0 || matrix[0].length==0) return 0;
-        int temp[] = new int[matrix[0].length];
+        int temp[] = new int[matrix[0].length]; //length of column
         int maxArea = 0;
         int area = 0;
         for(int i=0; i < matrix.length; i++){
@@ -12,7 +12,7 @@ public class Solution {
                     temp[j] += 1;
                 }
             }
-            area = maxHistogram(temp);
+            area = maxHistogram(temp); //transform into an array
             if(area > maxArea){
                 maxArea = area;
             }
