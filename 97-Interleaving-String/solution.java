@@ -2,8 +2,8 @@ public class Solution {
     public boolean isInterleave(String s1, String s2, String s3) {
         boolean [][] dp = new boolean[s1.length()+1][s2.length()+1];
         if(s3.length()!=s1.length()+s2.length()) return false;
-        if(s1==null && s2==null && s3==null) return true;
-        if(s1.length()==0 && s2.length()==0 &&s3.length()==0) return true;
+        // if(s1==null && s2==null && s3==null) return true;
+        // if(s1.length()==0 && s2.length()==0 &&s3.length()==0) return true;
         dp[0][0] = true;
         for(int i=1; i<s1.length(); i++){
             if(s1.charAt(i-1) == s3.charAt(i-1)){
