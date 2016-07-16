@@ -7,16 +7,13 @@ public class Solution {
         dp[0][0] = true;
         for(int i=1; i<s1.length(); i++){
             if(s1.charAt(i-1) == s3.charAt(i-1)){
-                dp[0][i-1] = true;
-            }else{
-                dp[0][i-1] = false;
+                dp[0][i] = dp[0][i-1];
             }
+            
         }
         for(int i=1; i<s2.length(); i++){
             if(s2.charAt(i-1) == s3.charAt(i-1)){
-                dp[i-1][0] = true;
-            }else{
-                dp[i-1][0] = false;
+                dp[i][0] = dp[i-1][0];
             }
         }
         for(int i=1; i<s1.length(); i++){
