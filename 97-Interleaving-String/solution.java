@@ -13,12 +13,8 @@ public class Solution {
         }
         for (int i = 1; i < matrix.length; i++){
             for (int j = 1; j < matrix[0].length; j++){
-                if(s2.charAt(i-1)==s3.charAt(i+j-1))){
-                    matrix[i][j] = matrix[i-1][j];
-                }
-                if(s1.charAt(j-1)==s3.charAt(i+j-1)){
-                    matrix[i][j] = matrix[i][j-1];
-                }
+                matrix[i][j] = (matrix[i-1][j]&&(s2.charAt(i-1)==s3.charAt(i+j-1)))
+                            || (matrix[i][j-1]&&(s1.charAt(j-1)==s3.charAt(i+j-1)));
             }
         }
         return matrix[s2.length()][s1.length()];
