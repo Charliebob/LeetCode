@@ -4,10 +4,11 @@ public class Solution {
         boolean[][] matrix = new boolean[s2.length()+1][s1.length()+1];
         matrix[0][0] = true;
         for (int i = 1; i < matrix[0].length; i++){
-            matrix[0][i] = matrix[0][i-1]&&(s1.charAt(i-1)==s3.charAt(i-1));
+            if(s1.charAt(i-1)==s3.charAt(i-1))
+            matrix[0][i] = matrix[0][i-1];
         }
         for (int i = 1; i < matrix.length; i++){
-            if((s2.charAt(i-1)==s3.charAt(i-1)))
+            if(s2.charAt(i-1)==s3.charAt(i-1))
                 matrix[i][0] = matrix[i-1][0];
         }
         for (int i = 1; i < matrix.length; i++){
