@@ -9,7 +9,6 @@ public class Solution {
             if(s1.charAt(i-1) == s3.charAt(i-1)){
                 dp[0][i] = dp[0][i-1];
             }
-            
         }
         for(int i=1; i<s2.length(); i++){
             if(s2.charAt(i-1) == s3.charAt(i-1)){
