@@ -5,18 +5,18 @@ public class Solution {
         if(s1==null && s2==null && s3==null) return true;
         if(s1.length()==0 && s2.length()==0 &&s3.length()==0) return true;
         dp[0][0] = true;
-        for(int i=0; i<s1.length(); i++){
-            if(s1.charAt(i) == s3.charAt(i)){
-                dp[0][i] = true;
+        for(int i=1; i<s1.length(); i++){
+            if(s1.charAt(i-1) == s3.charAt(i-1)){
+                dp[0][i-1] = true;
             }else{
-                dp[0][i] = false;
+                dp[0][i-1] = false;
             }
         }
-        for(int i=0; i<s2.length(); i++){
-            if(s2.charAt(i) == s3.charAt(i)){
-                dp[i][0] = true;
+        for(int i=1; i<s2.length(); i++){
+            if(s2.charAt(i-1) == s3.charAt(i-1)){
+                dp[i-1][0] = true;
             }else{
-                dp[i][0] = false;
+                dp[i-1][0] = false;
             }
         }
         for(int i=1; i<s1.length(); i++){
