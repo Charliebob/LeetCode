@@ -23,7 +23,7 @@ public class Solution {
             for(int j=1; j<col; j++){
                 if(obstacleGrid[i][j]==1){
                     for(int k=i; k<row; k++) dp[k][j] = 0;
-                    for(int l=j; j<col; l++) dp[i][l] = 0;
+                    for(int l=j; l<col; l++) dp[i][l] = 0;
                 }else{
                     dp[i][j] = dp[i-1][j]+dp[i][j-1];
                 }
