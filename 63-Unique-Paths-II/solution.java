@@ -21,7 +21,7 @@ public class Solution {
         }
         for(int i=1; i<row; i++){
             for(int j=1; j<col; j++){
-                if(obstacle[i][j]==1){
+                if(obstacleGrid[i][j]==1){
                     for(int k=i; k<row; k++) dp[k][j] = 0;
                     for(int l=j; j<col; l++) dp[i][l] = 0;
                 }else{
