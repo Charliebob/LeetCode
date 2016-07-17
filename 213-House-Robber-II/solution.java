@@ -14,7 +14,6 @@ public class Solution {
         for(int k=i+2; k<=j; k++){
             dp[k]=Math.max(dp[k-1], dp[k-2]+nums[k]);    
         }
-     
         return dp[j];
     }
 }
