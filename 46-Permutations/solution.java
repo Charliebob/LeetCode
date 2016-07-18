@@ -8,7 +8,7 @@ public class Solution {
         return list;
     }
     
-    void backTrack (List<List<Integer>> list, ArrayList<Integer> perm, int i, int[] nums){
+    private void backTrack (List<List<Integer>> list, ArrayList<Integer> perm, int i, int[] nums){
         //Permutation completes
         if(i==nums.length){
             list.add(new ArrayList(perm));
@@ -18,7 +18,7 @@ public class Solution {
        //Insert elements in the array by increasing index
         for(int j=0;j<=i;j++){
             newPerm.add(j,nums[i]);
-            backTrack(newPerm,i+1,nums);
+            backTrack(list, newPerm,i+1,nums);
             newPerm.remove(j);
         }
         
