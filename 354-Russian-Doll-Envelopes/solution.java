@@ -14,10 +14,10 @@ public class Solution {
         int dp[] = new int[envelopes.length];
         int len = 0;
         for(int[] envelope : envelopes){
-            int index = Arrays.binarySearch(dp, 0, len, envelope[1]);
+            int index = Arrays.binarySearch(dp, 0, len, envelope[1]); //(0,len) len=0 at first
             if(index < 0)
-                index = -(index + 1);
-            dp[index] = envelope[1];
+                index = -(index + 1); //not found
+            dp[index] = envelope[1];  //insert
             if(index == len)
                 len++;
         }
