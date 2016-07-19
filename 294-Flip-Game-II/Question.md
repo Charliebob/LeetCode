@@ -27,4 +27,4 @@ Derive your algorithm's runtime complexity.
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(E) Nim Game](/problems/nim-game/) [(E) Flip Game](/problems/flip-game/)</span></div>
+<span class="hidebutton">[(E) Nim Game](/problems/nim-game/) [(E) Flip Game](/problems/flip-game/) [(M) Guess Number Higher or Lower II](/problems/guess-number-higher-or-lower-ii/)</span></div>
