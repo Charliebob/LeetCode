@@ -15,7 +15,7 @@ public class Solution {
             if(n%i==0){
                 item.add(i);
                 breakDown(result, item, n/i, i);
-                item.remove(item.size()-1);
+                item.remove(item.size()-1); //remove the last one
             }
         }
     }
