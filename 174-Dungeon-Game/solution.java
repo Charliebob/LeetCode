@@ -3,7 +3,6 @@ public class Solution {
         if (dungeon == null || dungeon.length == 0 || dungeon[0].length == 0) {
             return 0;
         }
-        
         int m = dungeon.length, n = dungeon[0].length;
         int[][] f = new int[m][n];
         //初始化最后一步的血量要求
