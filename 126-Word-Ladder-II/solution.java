@@ -1,25 +1,24 @@
 public class Solution {
-    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
-        Map<String,List<String>> map;
+    Map<String,List<String>> map;
 	List<List<String>> results;
-    public List<List<String>> findLadders(String start, String end, Set<String> dict) {   	
+    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
         results= new ArrayList<List<String>>();
-        if (dict.size() == 0)
+        if (wordList.size() == 0)
 			return results;
         
         int min=Integer.MAX_VALUE;
         
         Queue<String> queue= new ArrayDeque<String>();
-        queue.add(start);
+        queue.add(beginWord);
         
 		map = new HashMap<String,List<String>>();
 		
 		Map<String,Integer> ladder = new HashMap<String,Integer>();
-		for (String string:dict)
+		for (String string:wordList)
 		    ladder.put(string, Integer.MAX_VALUE);
-		ladder.put(start, 0);
+		ladder.put(beginWord, 0);
 				
-		dict.add(end);
+		wordList.add(endWord);
 		//BFS: Dijisktra search
 		while (!queue.isEmpty()) {
 		   
@@ -55,23 +54,23 @@ public class Solution {
 					    	//Which one is better?
 					    }
 					    
-					    if (new_word.equals(end))
+					    if (new_word.equals(endWord))
 					    	min=step;
 
-					}//End if dict contains new_word
-				}//End:Iteration from 'a' to 'z'
-			}//End:Iteration from the first to the last
-		}//End While
+					}//endWord if wordList contains new_word
+				}//endWord:Iteration from 'a' to 'z'
+			}//endWord:Iteration from the first to the last
+		}//endWord While
 
     	//BackTracking
 		LinkedList<String> result = new LinkedList<String>();
-		backTrace(end,start,result);
+		backTrace(endWord,beginWord,result);
 
 		return results;        
     }
-    private void backTrace(String word,String start,List<String> list){
-    	if (word.equals(start)){
-    		list.add(0,start);
+    private void backTrace(String word,String beginWord,List<String> list){
+    	if (word.equals(beginWord)){
+    		list.add(0,beginWord);
     		results.add(new ArrayList<String>(list));
     		list.remove(0);
     		return;
@@ -79,7 +78,7 @@ public class Solution {
     	list.add(0,word);
     	if (map.get(word)!=null)
     		for (String s:map.get(word))
-    			backTrace(s,start,list);
+    			backTrace(s,beginWord,list);
     	list.remove(0);
     }
 }
