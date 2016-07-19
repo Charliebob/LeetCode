@@ -15,5 +15,4 @@ public class Solution {
         }else if(target==0){
             result.add(new ArrayList<Integer>(cur));
         }
-    }
 }
