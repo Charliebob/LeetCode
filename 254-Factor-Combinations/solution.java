@@ -6,9 +6,7 @@ public class Solution {
     }
     private void breakDown(List<List<Integer>> result, List<Integer> item, int n, int start){
         if(n<=1 && item.size()>1){
-            //if(){
-                result.add(new ArrayList<Integer>(item));
-            //}
+            result.add(new ArrayList<Integer>(item));
             return;
         }
         for(int i=start; i<=n; i++){
