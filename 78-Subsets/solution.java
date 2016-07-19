@@ -4,7 +4,7 @@ public class Solution {
         if(nums.length == 0){
             return result;
         }
-        Arrays.sort(nums);
+        //Arrays.sort(nums);
         dfs(nums, 0, new ArrayList<Integer>(), result);
         return result;
     }
