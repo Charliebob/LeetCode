@@ -16,10 +16,28 @@ public class Solution {
         List<Integer> newPerm = new ArrayList<Integer>(perm);
        //Insert elements in the array by increasing index
         for(int j=0;j<=i;j++){
-            newPerm.add(j,nums[i]);
+            newPerm.add(j,nums[i]); //depth not j
             backTrack(list, newPerm,i+1,nums);
             newPerm.remove(j);
-        }
+        }/*
+        []
+            [1]
+                [2,1]{
+                    [3,2,1] j=0  pos
+                    [2,1]   j=1
+                    [2,3,1]
+                    [2,1]
+                    [2,1,3]
+                }
+                [1]
+                [1,2]{
+                    [3,1,2]
+                    [1,2]
+                    [1,3,2]
+                    [1,2]
+                    [1,2,3]
+                }
+        */
         
     }
 }
