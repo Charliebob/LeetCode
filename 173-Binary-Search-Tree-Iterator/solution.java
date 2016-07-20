@@ -25,19 +25,27 @@ public class BSTIterator {
     /** @return the next smallest number */
     public int next() {
         while(hasNext()){
-            if(current!=null){
+            while(current!=null){
                 stack.push(current);
                 current = current.left;
-            }else{
-                current = stack.peek().right;
-                break;
             }
+            current = stack.peek().right;
+            break;
+            
         }
         TreeNode node = stack.pop();
         return node.val;
     }
 }
 
+
+// while(cur!=null){
+//                 stack.add(cur);
+//                 cur = cur.left;
+//             }
+//             cur = stack.pop();
+//             result.add(cur.val);
+//             cur = cur.right;
 /**
  * Your BSTIterator will be called like this:
  * BSTIterator i = new BSTIterator(root);
