@@ -24,7 +24,7 @@ public class BSTIterator {
 
     /** @return the next smallest number */
     public int next() {
-        while(!stack.isEmpty()||current!=null){
+        while(hasNext()){
             if(current!=null){
                 stack.push(current);
                 current = current.left;
