@@ -6,13 +6,17 @@ public class Solution {
         map.put('0', '0');
         map.put('1', '1');
         map.put('8', '8');
-        int left =0, right = num.length()-1;
-        while(left<=right){
-            if(!map.containsKey(num.charAt(left))) return false;
-            if(map.get(num.charAt(left))!= num.charAt(right))
-                return false;
-            left++;
-            right--;
+        // int left =0, right = num.length()-1;
+        // while(left<=right){
+        //     if(!map.containsKey(num.charAt(left))) return false;
+        //     if(map.get(num.charAt(left))!= num.charAt(right))
+        //         return false;
+        //     left++;
+        //     right--;
+        // }
+        for(int i=0; i<num.length(); i++){
+            if(!map.containsKey(num.charAt(i)) return false;
+            if(map.get(num.charAt(i))!=num.charAt(num.length()-1-i)) return false;
         }
         return true;
     }
