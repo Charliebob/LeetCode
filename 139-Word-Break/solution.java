@@ -6,7 +6,7 @@ public class Solution {
             for(int j=0; j < i; j++){
                 if(f[j] && wordDict.contains(s.substring(j, i))){
                     f[i] = true;
-                    break;
+                    //break;
                 }
             }
         }
