@@ -8,25 +8,17 @@
  */
 public class Solution {
     public ListNode plusOne(ListNode head) {
-        if( DFS(head) == 0){
-        return head;
-        }else{
-            ListNode newHead = new ListNode(1);
-            newHead.next = head;
-            return newHead;
-        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        helper(dummy);
+        return dummy.val == 0 ? head : dummy;
     }
     
-    public int DFS(ListNode head){
-        if(head == null) return 1;
-        
-        int carry = DFS(head.next);
-        
-        if(carry == 0) return 0;
-        
-        int val = head.val + 1;
-        head.val = val%10;
-        return val/10;
+    private int helper(ListNode node){
+        if(node == null) return 1;
+        node.val += helper(node.next);
+        if(node.val <= 9) return 0;
+        node.val %= 10;
+        return 1;
     }
-    
 }
