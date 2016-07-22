@@ -14,12 +14,12 @@ The digits are stored such that the most significant digit is at the head of the
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Array](/tag/array/) [Math](/tag/math/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.106532;">[Array](/tag/array/) [Math](/tag/math/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0;">[(M) Multiply Strings](/problems/multiply-strings/) [(E) Add Binary](/problems/add-binary/) [(M) Plus One Linked List](/problems/plus-one-linked-list/)</span></div>
+<span class="hidebutton">[(M) Multiply Strings](/problems/multiply-strings/) [(E) Add Binary](/problems/add-binary/) [(M) Plus One Linked List](/problems/plus-one-linked-list/)</span></div>
