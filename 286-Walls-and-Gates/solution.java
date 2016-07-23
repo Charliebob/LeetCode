@@ -1,11 +1,11 @@
 public class Solution {
     public void wallsAndGates(int[][] rooms) {
         for(int i = 0; i < rooms.length; i++) {
-        for(int j = 0; j < rooms[0].length; j++) {
-            if(rooms[i][j] == 0) dfs(rooms, i, j, 0);
+            for(int j = 0; j < rooms[0].length; j++) {
+                if(rooms[i][j] == 0) dfs(rooms, i, j, 0);
+            }
         }
     }
-}
 
     public void dfs(int[][] rooms, int i, int j, int g) {
         //if rooms[i][j] distance is smaller than previous
