@@ -25,15 +25,10 @@ public class Solution {
 						T[i] = T[j] + 1;
 					}
 				}
+				// Find the maximum length from the array that we just generated 
 				longest = Math.max(longest, T[i]);
 			}
 		}
-
-		// Find the maximum length from the array that we just generated 
-// 		int longest = 0;
-// 		for(int i=0; i < T.length; i++)
-// 			longest = Math.max(longest, T[i]);
-
 		return longest;
     }
 }
