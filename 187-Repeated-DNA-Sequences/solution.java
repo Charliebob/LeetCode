@@ -26,7 +26,7 @@ public class Solution {
             if(s.charAt(i) == 'G') numberBuilder.append("2");
             if(s.charAt(i) == 'T') numberBuilder.append("3");
         }
-        return Integer.parseInt(numberBuilder.toString,4);
+        return Integer.parseInt(numberBuilder.toString(),4);
     }
     
 }
