@@ -21,11 +21,9 @@ public class Solution {
         if (root == null) {
             return false;
         }
-        
         if (closestKValuesHelper(list, root.left, target, k)) {
             return true;
         }
-        
         if (list.size() == k) {
             if (Math.abs(list.getFirst() - target) < Math.abs(root.val - target)) {
                 return true;
