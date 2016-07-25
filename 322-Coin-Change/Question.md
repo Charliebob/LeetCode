@@ -20,6 +20,6 @@ Special thanks to [@jianchao.li.fighter](https://leetcode.com/discuss/user/jianc
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Dynamic Programming](/tag/dynamic-programming/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0;">[Dynamic Programming](/tag/dynamic-programming/)</span></div>
