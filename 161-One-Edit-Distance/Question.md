@@ -6,9 +6,9 @@ Given two strings S and T, determine if they are both one edit distance apart.
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0.103323;">[Snapchat](/company/snapchat/) [Uber](/company/uber/) [Facebook](/company/facebook/) [Twitter](/company/twitter/)</span></div>
+<span class="hidebutton">[Snapchat](/company/snapchat/) [Uber](/company/uber/) [Facebook](/company/facebook/) [Twitter](/company/twitter/)</span></div>
 
 <div>
 
