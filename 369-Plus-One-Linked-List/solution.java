@@ -10,15 +10,32 @@ public class Solution {
     public ListNode plusOne(ListNode head) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        helper(dummy);
-        return dummy.val == 0 ? head : dummy;
-    }
-    
-    private int helper(ListNode node){
-        if(node == null) return 1;
-        node.val += helper(node.next);
-        if(node.val <= 9) return 0;
-        node.val %= 10;
-        return 1;
+        ListNode i = dummy;
+        ListNode j = dummy;
+        
+        while (j.next != null) {
+            j = j.next;
+            if (j.val != 9) {
+                i = j;
+            }
+        }
+        
+        if (j.val != 9) {
+            j.val++;
+        } else {
+            i.val++;
+            i = i.next;
+            while (i != null) {
+                i.val = 0;
+                i = i.next;
+            }
+        }
+        
+        if (dummy.val == 0) {
+            return dummy.next;
+        }
+        
+        return dummy;
+        
     }
 }
