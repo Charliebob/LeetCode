@@ -1,16 +1,16 @@
 public class MedianFinder {
 
     // Adds a number into the data structure.
-    private Queue<Long> small = new PriorityQueue(new Comparator<Long>(){
+    private Queue<Integer> small = new PriorityQueue(new Comparator<Integer>(){
         @Override
-            public int compare(Long l1, Long l2){
+            public int compare(Integer l1, Integer l2){
                 return l2-l1;
             }
     }); //maxHeap
-    private Queue<Long> large = new PriorityQueue(); //minHeap
+    private Queue<Integer> large = new PriorityQueue(); //minHeap
 
     public void addNum(int num) {
-        large.add((long) num);
+        large.add(num);
         small.add(large.poll());
         if (large.size() < small.size())
             large.add(small.poll());
@@ -19,7 +19,7 @@ public class MedianFinder {
     public double findMedian() {
         return large.size() > small.size()
                ? large.peek()
-               : (large.peek() - small.peek()) / 2.0;
+               : (large.peek() + small.peek()) / 2.0;
     }
 };
 
