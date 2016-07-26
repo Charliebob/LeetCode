@@ -12,7 +12,7 @@ public class Solution {
                 dp[i] += dp[i - 2];
             }
             // 如果字符串的第i-1位和第i位不能组成有效二位数字，在第i-1位的解码方法上继续解码
-            if(Integer.parseInt(s.substring(i-1, i)) != 0){
+            if(Integer.parseInt(s.substring(i-1, i))>=1 && Integer.parseInt(s.substring(i-1, i))<=9){
                 dp[i] += dp[i - 1];
             }
         }
