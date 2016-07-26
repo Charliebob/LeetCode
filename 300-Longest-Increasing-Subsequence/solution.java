@@ -20,10 +20,7 @@ public class Solution {
 				{
 					// But increase the value only if it results in a larger value of the sequence than T[i]
 					// It is possible that T[i] already has larger value from some previous j'th iteration
-					if(T[j] + 1 > T[i])
-					{
-						T[i] = T[j] + 1;
-					}
+					T[i] = Math.max(T[i], T[j]+1);
 				}
 				// Find the maximum length from the array that we just generated 
 				longest = Math.max(longest, T[i]);
