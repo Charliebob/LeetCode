@@ -7,14 +7,14 @@ public class Solution {
         int max = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                int length = findSmallAround(i, j, matrix, cache, Integer.MAX_VALUE);
+                int length = DFS(i, j, matrix, cache, Integer.MAX_VALUE);
                 max = Math.max(length, max);
             }
         }
         return max;
     }
-    private int findSmallAround(int i, int j, int[][] matrix, int[][] cache, int pre) {
-        // if out of bond OR current cell value larger than previous cell value.
+    private int DFS(int i, int j, int[][] matrix, int[][] cache, int pre) {
+        // if out of boundary OR current cell value larger than previous cell value.
         if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length || matrix[i][j] >= pre) {
             return 0;
         }
@@ -24,10 +24,10 @@ public class Solution {
         } else {
             int cur = matrix[i][j];
             int tempMax = 0;
-            tempMax = Math.max(findSmallAround(i - 1, j, matrix, cache, cur), tempMax);
-            tempMax = Math.max(findSmallAround(i + 1, j, matrix, cache, cur), tempMax);
-            tempMax = Math.max(findSmallAround(i, j - 1, matrix, cache, cur), tempMax);
-            tempMax = Math.max(findSmallAround(i, j + 1, matrix, cache, cur), tempMax);
+            tempMax = Math.max(DFS(i - 1, j, matrix, cache, cur), tempMax);
+            tempMax = Math.max(DFS(i + 1, j, matrix, cache, cur), tempMax);
+            tempMax = Math.max(DFS(i, j - 1, matrix, cache, cur), tempMax);
+            tempMax = Math.max(DFS(i, j + 1, matrix, cache, cur), tempMax);
             cache[i][j] = ++tempMax;
             return tempMax;
         }
