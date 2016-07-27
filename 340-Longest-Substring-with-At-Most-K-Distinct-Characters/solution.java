@@ -4,8 +4,7 @@ public class Solution {
         int left = 0;
         int max = 0;
         for(int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);//java8
             while (map.size() > k) {
                 char leftChar = s.charAt(left);
                 if (map.containsKey(leftChar)) {
