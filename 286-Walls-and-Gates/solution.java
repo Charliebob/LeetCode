@@ -9,7 +9,7 @@ public class Solution {
 
     public void dfs(int[][] rooms, int i, int j, int g) {
         //if rooms[i][j] distance is smaller than previous
-        if(i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length || rooms[i][j] < g) return;
+        if(i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length || rooms[i][j] == -1) return;
         rooms[i][j] = g;
         dfs(rooms, i - 1, j, g + 1);
         dfs(rooms, i, j - 1, g + 1);
