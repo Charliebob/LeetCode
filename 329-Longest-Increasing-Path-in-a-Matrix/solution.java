@@ -28,7 +28,7 @@ public class Solution {
             tempMax = Math.max(DFS(i + 1, j, matrix, cache, cur), tempMax);
             tempMax = Math.max(DFS(i, j - 1, matrix, cache, cur), tempMax);
             tempMax = Math.max(DFS(i, j + 1, matrix, cache, cur), tempMax);
-            cache[i][j] = ++tempMax;
+            cache[i][j] = ++tempMax; //increase now!
             return tempMax;
         }
     }
