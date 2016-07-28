@@ -19,9 +19,9 @@ Special thanks to [@jianchao.li.fighter](https://leetcode.com/discuss/user/jianc
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
 
-<span class="hidebutton">[Adobe](/company/adobe/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0;">[Adobe](/company/adobe/)</span></div>
 
 <div>
 
