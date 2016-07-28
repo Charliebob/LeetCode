@@ -34,6 +34,6 @@ public class Solution {
                 }
             }
         }
-        return T[0][nums.length];
+        return T[0][nums.length-1];
     }
 }
