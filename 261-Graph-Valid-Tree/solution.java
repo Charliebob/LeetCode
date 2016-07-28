@@ -30,7 +30,7 @@ public class Solution {
     }
     
     // check if an undirected graph has cycle started from vertex u
-    boolean hasCycle(List<List<Integer>> adjList, int u, boolean[] visited, int parent) {
+    private boolean hasCycle(List<List<Integer>> adjList, int u, boolean[] visited, int parent) {
         visited[u] = true;
         
         for (int i = 0; i < adjList.get(u).size(); i++) {
