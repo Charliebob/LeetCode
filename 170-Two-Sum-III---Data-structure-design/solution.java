@@ -2,7 +2,7 @@ public class TwoSum {
     private HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
     // Add the number to an internal data structure.
 	public void add(int number) {
-	   map.put(number, getOrDefault(0, map.get(number)+1)); 
+	   map.put(number, map.getOrDefault(0, map.get(number)+1)); 
 	}
 
     // Find if there exists any pair of numbers which sum is equal to the value.
