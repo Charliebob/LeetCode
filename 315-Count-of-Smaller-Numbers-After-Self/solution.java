@@ -1,11 +1,12 @@
 public class Solution {
-class Node {
-    Node left, right;
-    int val, sum, dup = 1;
-    public Node(int v, int s) {
-        val = v;
-        sum = s;
-}
+    class Node {
+        Node left, right;
+        int val, sum, dup = 1;
+        public Node(int v, int s) {
+            val = v;
+            sum = s;
+        }
+    }
     public List<Integer> countSmaller(int[] nums) {
         Integer[] ans = new Integer[nums.length];
         Node root = null;
@@ -29,4 +30,5 @@ class Node {
         }
         return node;
     }
+    
 }
