@@ -4,7 +4,7 @@ public class Solution {
         int index = 0;
         long sum = 0;
         while(sum<n){
-            if(index>=nums.length || nums[index]>sum+1){
+            if(index>=nums.length || nums[index]>sum+1){//?
                 ++count;
                 sum += sum+1;
             }else{
