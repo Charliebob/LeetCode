@@ -7,7 +7,7 @@ public class Solution {
             int count = words[index].length();
             int last = index + 1;
             while (last < words.length) {
-                if (words[last].length() + count + 1 > L) break;
+                if (words[last].length() + count + 1 > maxWidth) break;
                 count += words[last].length() + 1;
                 last++;
             }
@@ -20,13 +20,13 @@ public class Solution {
                     builder.append(words[i] + " ");
                 }
                 builder.deleteCharAt(builder.length() - 1);
-                for (int i = builder.length(); i < L; i++) {
+                for (int i = builder.length(); i < maxWidth; i++) {
                     builder.append(" ");
                 }
             } else {
                 // middle justified
-                int spaces = (L - count) / diff;
-                int r = (L - count) % diff;
+                int spaces = (maxWidth - count) / diff;
+                int r = (maxWidth - count) % diff;
                 for (int i = index; i < last; i++) {
                     builder.append(words[i]);
                     if (i < last - 1) {
