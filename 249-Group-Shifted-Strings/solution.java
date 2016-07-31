@@ -7,7 +7,7 @@ public class Solution {
             String key = "";
             int offset = word.charAt(0) - 'a';
             for(int i = 1; i < word.length(); i++){
-                key += (word.charAt(i) - offset + 26) % 26;
+                key += (word.charAt(i) - offset) % 26;
             }
             
             if(!map.containsKey(key)){
