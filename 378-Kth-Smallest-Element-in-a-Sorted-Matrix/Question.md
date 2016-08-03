@@ -25,10 +25,16 @@ You may assume k is always valid, 1 ≤ k ≤ n<sup>2</sup>.
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Google](/company/google/)</span></div>
+<span class="hidebutton">[Google](/company/google/) [Twitter](/company/twitter/)</span></div>
 
 <div>
 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Binary Search](/tag/binary-search/) [Heap](/tag/heap/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+
+<span class="hidebutton">[(M) Find K Pairs with Smallest Sums](/problems/find-k-pairs-with-smallest-sums/)</span></div>
