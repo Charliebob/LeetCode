@@ -5,7 +5,7 @@
 Design a data structure that supports all following operations in **O(1)** time.
 
 1.  `insert(val)`: Inserts an item val to the set if not already present.
-2.  `delete(val)`: Deletes an item val from the set if present.
+2.  `remove(val)`: Removes an item val from the set if present.
 3.  `getRandom`: Returns a random element from current set of elements. Each element must have the **same probability** of being returned.
 
 **Example:**
@@ -17,7 +17,7 @@ RandomizedSet randomSet = new RandomizedSet();
 randomSet.insert(1);
 
 // Returns false as 2 does not exist in the set.
-randomSet.delete(2);
+randomSet.remove(2);
 
 // Inserts 2 to the set, returns true. Set now contains [1,2].
 randomSet.insert(2);
@@ -25,8 +25,8 @@ randomSet.insert(2);
 // getRandom should return either 1 or 2 randomly.
 randomSet.getRandom();
 
-// Deletes 1 from the set, returns true. Set now contains [2].
-randomSet.delete(1);
+// Removes 1 from the set, returns true. Set now contains [2].
+randomSet.remove(1);
 
 // 2 was already in the set, so return false.
 randomSet.insert(2);
