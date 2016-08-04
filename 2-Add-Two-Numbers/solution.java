@@ -22,9 +22,10 @@ public class Solution {
             if(q!=null) q = q.next;
         }
         if(carry>0){
-            carry.next = new ListNode(carry);
+            curr.next = new ListNode(carry);
         }
         return dummyHead.next;
     }
     
 }
+        
