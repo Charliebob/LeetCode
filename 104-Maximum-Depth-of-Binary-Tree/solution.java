@@ -10,18 +10,18 @@
 public class Solution {
     public int maxDepth(TreeNode root) {
         if(root==null) return 0;
-        Queue<TreeNode> stack = new LinkedList<TreeNode>();
-        stack.add(root);
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
         int count = 0;
-        while(!stack.isEmpty()){
-            int size = stack.size();
+        while(!queue.isEmpty()){
+            int size = queue.size();
             while(size-->0){
-                TreeNode cur = stack.poll();
+                TreeNode cur = queue.poll();
                 if(cur.left!=null){
-                    stack.add(cur.left);
+                    queue.add(cur.left);
                 }
                 if(cur.right!=null){
-                    stack.add(cur.right);
+                    queue.add(cur.right);
                 }
             }
             count++;
