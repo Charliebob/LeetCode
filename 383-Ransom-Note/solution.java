@@ -1,8 +1,12 @@
 public class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
-        for(int i=0; i<magazine.length()-ransomNote.length(); i++){
-            if(magazine.indexOf(i)==ransomNote) return true;
+        int[] alphabet = new int[26];
+        for(int i=0; i<magazine.length(); i++){
+            alphabet[magazine.charAt(i)-'a']++;
         }
-        return false;
+        for(int i=0; i<ransomNote.length(); i++){
+            if(--alphabet[ransomNote.charAt(i)-'a']<0) return false;
+        }
+        return true;
     }
 }
