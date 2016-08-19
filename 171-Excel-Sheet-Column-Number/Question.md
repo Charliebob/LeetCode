@@ -21,9 +21,9 @@ Special thanks to [@ts](https://leetcode.com/discuss/user/ts) for adding this pr
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0.218958;">[Microsoft](/company/microsoft/) [Uber](/company/uber/)</span></div>
+<span class="hidebutton">[Microsoft](/company/microsoft/) [Uber](/company/uber/)</span></div>
 
 <div>
 
