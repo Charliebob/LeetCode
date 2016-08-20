@@ -24,4 +24,4 @@ return `[1,6],[8,10],[15,18]`.
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton" style="display: inline; opacity: 1;">[(H) Insert Interval](/problems/insert-interval/) [(E) Meeting Rooms](/problems/meeting-rooms/) [(M) Meeting Rooms II](/problems/meeting-rooms-ii/)</span></div>
+<span class="hidebutton">[(H) Insert Interval](/problems/insert-interval/) [(E) Meeting Rooms](/problems/meeting-rooms/) [(M) Meeting Rooms II](/problems/meeting-rooms-ii/)</span></div>
