@@ -1,5 +1,5 @@
 public class Solution {
-    public List<Integer> lexicalOrder(int n) {
+    public void solve(int curr, int n, List<Integer> ret){
         if(curr > n){//curr is the number
             return;
         }
