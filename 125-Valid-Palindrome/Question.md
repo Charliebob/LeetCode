@@ -23,7 +23,7 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton">[Two Pointers](/tag/two-pointers/) [String](/tag/string/)</span></div>
+<span class="hidebutton" style="display: none;">[Two Pointers](/tag/two-pointers/) [String](/tag/string/)</span></div>
 
 <div>
 
