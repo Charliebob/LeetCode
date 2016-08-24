@@ -20,9 +20,9 @@ return `[3,2,1]`.
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Tree](/tag/tree/) [Stack](/tag/stack/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.676737;">[Tree](/tag/tree/) [Stack](/tag/stack/)</span></div>
 
 <div>
 
