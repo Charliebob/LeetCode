@@ -22,4 +22,4 @@ Given _nums1_ = `[1, 2, 2, 1]`, _nums2_ = `[2, 2]`, return `[2]`.
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton" style="display: none;">[(E) Intersection of Two Arrays II](/problems/intersection-of-two-arrays-ii/)</span></div>
+<span class="hidebutton">[(E) Intersection of Two Arrays II](/problems/intersection-of-two-arrays-ii/)</span></div>
