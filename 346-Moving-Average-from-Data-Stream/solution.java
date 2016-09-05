@@ -1,21 +1,19 @@
 public class MovingAverage {
-
     private int size;
     private int sum;
     private Queue<Integer> queue;
-    public MovingAverage(int size) {
+    public MovingAverage(int size){
         this.size = size;
         this.sum = 0;
         this.queue = new LinkedList<Integer>();
     }
-
-    public double next(int val) {
-        if (queue.size() == size) {
-            sum -= queue.poll();
+    public double next(int val){
+        if(queue.size()==size){
+            sum-=queue.poll();
         }
         queue.offer(val);
-        sum += val;
-        return (double)sum / queue.size();
+        sum+=val;
+        return (double)sum/queue.size();
     }
     
 }
@@ -25,3 +23,5 @@ public class MovingAverage {
  * MovingAverage obj = new MovingAverage(size);
  * double param_1 = obj.next(val);
  */
+ 
+ 
