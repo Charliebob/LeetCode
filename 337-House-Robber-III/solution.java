@@ -15,7 +15,7 @@ public class Solution {
 
     private int[] robSub(TreeNode root) {
         if (root == null) {
-        return new int[2];
+            return new int[2];
         }
 
         int[] left = robSub(root.left);
