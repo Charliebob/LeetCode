@@ -10,7 +10,7 @@ public class Solution {
         boolean[] dp = new boolean[sum+1];
         dp[0] = true;
         for(int i=1; i<nums.length; i++){
-            for(int j=volumn; j>=nums[i-1]; j--){
+            for(int j=sum; j>=nums[i-1]; j--){
                 dp[j] = dp[j] || dp[j-nums[i-1]];
             }
         }
