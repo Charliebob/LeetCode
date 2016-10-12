@@ -18,7 +18,7 @@ public class Solution {
         int mid = start + (end-start)/2;
         TreeNode node = new TreeNode(nums[mid]);
         node.left = helper(nums, start, mid-1);
-        node.right = helper(nums, mid+1);
+        node.right = helper(nums, mid+1, end);
         return node;
     }
 }
