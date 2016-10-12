@@ -29,7 +29,7 @@ Explanation: The array cannot be partitioned into equal sum subsets.
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: none;">[eBay](/company/ebay/)</span></div>
+<span class="hidebutton">[eBay](/company/ebay/)</span></div>
 
 <div>
 
